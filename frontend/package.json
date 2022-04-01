@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-docker-sample-frontend",
+  "name": "nodejs-docker-example-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {

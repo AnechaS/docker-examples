@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-docker-sample-backend",
+  "name": "nodejs-docker-example-backend",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
