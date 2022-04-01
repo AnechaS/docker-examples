@@ -1,0 +1,12 @@
+FROM node:14.19.1
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+COPY ./frontend ./
+RUN npm install --production && npm run build
+
+EXPOSE 1337
+
+CMD ["npm", "start"]
