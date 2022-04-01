@@ -1,4 +1,4 @@
-# Nodejs Docker Samples
+# Nodejs Docker Example
 
 > Note: change directory to root project.
 
