@@ -18,5 +18,10 @@
   "devDependencies": {
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.4"
+  },
+  "author": {
+    "name": "Anecha Kuekharem",
+    "email": "Anachitheu.k@gmail.com",
+    "url": "https://github.com/AnechaS"
   }
 }

@@ -11,5 +11,9 @@
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": []
+  "author": {
+    "name": "Anecha Kuekharem",
+    "email": "Anachitheu.k@gmail.com",
+    "url": "https://github.com/AnechaS"
+  }
 }
