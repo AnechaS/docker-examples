@@ -1,0 +1,84 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.header {
+  padding-top: 8px;
+  width: 100%;
+}
+
+.item {
+  border: 2px solid #000000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.item > .title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.item > .body {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.itemDetail {
+  padding: 24px 32px;
+}
+
+.itemDetail > .back {
+  position: absolute;
+  background-color: #ffffff;
+  top: -20px;
+  left: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1959d1;
+  padding: 4px 10px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.itemDetail,
+.loader {
+  margin-top: 16px;
+}
+
+.btn {
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+}
+
+.link {
+  color: #1959d1;
+  width: 100%;
+  cursor: pointer;
+}
+
+.loader {
+  font-size: 16px;
+}
+
+.loaderCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

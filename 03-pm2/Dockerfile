@@ -4,9 +4,7 @@ WORKDIR /app
 
 ENV NODE_ENV production
 
-COPY ./frontend ./frontend
-COPY ./backend ./backend
-COPY ./03-pm2/ecosystem.config.js ./
+COPY . .
 
 RUN npm install pm2 -g
 RUN cd ./frontend && npm install --production && npm run build
