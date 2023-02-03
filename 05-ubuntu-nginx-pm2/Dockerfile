@@ -24,8 +24,6 @@ RUN cd ./frontend && \
 	chmod -R 777 ./public
 RUN cd ./backend && npm install --production
 
-# TODO: Run the app with a non-root user.
-
 EXPOSE 80
 
 # ENTRYPOINT pm2 start ./ecosystem.config.js && nginx -g 'daemon off;'
