@@ -14,5 +14,4 @@ RUN cd ./backend && npm install --production
 EXPOSE 3000
 EXPOSE 1337
 
-# @see https://stackoverflow.com/questions/59730264/docker-change-directory-in-cmd-command
 CMD [ "/bin/sh", "-c" , "concurrently 'cd /app/frontend && npm start' 'cd /app/backend && npm start'" ]
