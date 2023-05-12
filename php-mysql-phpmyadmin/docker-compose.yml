@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www
+    ports:
+      - 8080:80
+    tty: true
+    networks:
+      - net
+    container_name: app
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    container_name: mysql
+    tty: true
+    networks:
+      - net
+  phpmyadmin:
+    image: phpmyadmin
+    restart: unless-stopped
+    ports:
+      - 8888:80
+    environment:
+      - PMA_ARBITRARY=1
+    container_name: phpmyadmin
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
