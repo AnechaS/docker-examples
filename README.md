@@ -1,47 +1,47 @@
 # Nodejs Docker Example
 
-## 01⏤Basic (Spit frontend and backend)
+## nodejs-full-stack (Spit frontend and backend)
 
 ```bash
-$ cd 01-basic
+$ cd nodejs-full-stack
 $ docker-compose up
 ```
 
-## 02⏤Concurrently
+## nodejs-full-stack-combined
 
 ```bash
-$ cd 02-concurrently
+$ cd nodejs-full-stack-combined
 $ docker build -t example-02 .
 $ docker run --name example-02 -p 8000:3000 -p 1337:1337 example-02
 ```
 
-## 03⏤PM2
+## nodejs-full-stack-pm2
 
 ```bash
-$ cd 03-pm2
+$ cd nodejs-full-stack-pm2
 $ docker build -t example-03 .
 $ docker run --name example-03 -p 8000:3000 -p 1337:1337 example-03
 ```
 
-## 04⏤Docker Compose + Nginx 
+## nodejs-full-stack-nginx
 
 ```bash
-$ cd 04-compose-app-nginx
+$ cd nodejs-full-stack-nginx
 $ docker-compose up
 ```
 
-## 05⏤Ubuntu + Nginx + Pm2
+## nodejs-full-stack-ubuntu-nginx-pm2
 
 ```bash
-$ cd 05-ubuntu-nginx-pm2
+$ cd nodejs-full-stack-ubuntu-nginx-pm2
 $ docker build -t example-05 .
 $ docker run --name example-05 -p 8000:80 example-05
 ```
 
-## 06⏤Development
+## nodejs-full-stack-development
 
 ```bash
-$ cd 06-development
+$ cd nodejs-full-stack-development
 $ docker-compose up
 ```
 
@@ -50,7 +50,7 @@ $ docker-compose up
 ## httpd-ssl
 
 ```bash
-$ cd 06-development
+$ cd httpd-ssl
 $ docker build . -t my-httpd
 $ docker run --name my-httpd-server -p 80:80 -p 443:443 -d my-httpd
 ```
