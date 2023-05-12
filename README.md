@@ -7,8 +7,7 @@ $ cd nodejs-full-stack
 $ docker-compose up
 ```
 
-> NOTE:\
-  backend running on http://localhost:1337 \
+> backend running on http://localhost:1337 \
   frontend running on http://localhost:8000
 
 ## nodejs-full-stack-combined
@@ -19,8 +18,7 @@ $ docker build -t nodejs-full-stack-combined .
 $ docker run --name my-app -p 8000:3000 -p 1337:1337 nodejs-full-stack-combined
 ```
 
-> NOTE:\
-  backend running on http://localhost:1337 \
+> backend running on http://localhost:1337 \
   frontend running on http://localhost:3000
 
 ## nodejs-full-stack-pm2
@@ -31,8 +29,7 @@ $ docker build -t nodejs-full-stack-pm2 .
 $ docker run --name my-app -p 8000:3000 -p 1337:1337 nodejs-full-stack-pm2
 ```
 
-> NOTE:\
-  backend running on http://localhost:1337 \
+> backend running on http://localhost:1337 \
   frontend running on http://localhost:8000
 
 ## nodejs-full-stack-nginx
@@ -42,8 +39,7 @@ $ cd nodejs-full-stack-nginx
 $ docker-compose up
 ```
 
-> NOTE:\
-  app running on http://localhost:8000
+> app running on http://localhost:8000
 
 
 ## nodejs-full-stack-ubuntu-nginx-pm2
@@ -54,8 +50,7 @@ $ docker build -t nodejs-full-stack-ubuntu-nginx-pm2 .
 $ docker run --name my-app -p 8000:80 nodejs-full-stack-ubuntu-nginx-pm2
 ```
 
-> NOTE:\
-  app running on http://localhost:8000
+> app running on http://localhost:8000
 
 
 ## nodejs-full-stack-development
@@ -65,8 +60,7 @@ $ cd nodejs-full-stack-development
 $ docker-compose up
 ```
 
-> NOTE:\
-  backend running on http://localhost:1337 \
+> backend running on http://localhost:1337 \
   frontend running on http://localhost:8000
 
 ## httpd-ssl
@@ -77,8 +71,7 @@ $ docker build . -t my-httpd
 $ docker run --name my-httpd-server -p 80:80 -p 443:443 -d my-httpd
 ```
 
-> NOTE:\
-  app running on https://localhost
+> app running on https://localhost
 
 ## mysql-phpmyadmin
 
@@ -86,8 +79,7 @@ $ docker run --name my-httpd-server -p 80:80 -p 443:443 -d my-httpd
 $ cd mysql-phpmyadmin
 $ docker-compose up
 ```
-> NOTE:\
-  mysql running on mysql://localhost:3306 \
+> mysql running on mysql://localhost:3306 \
   phpmyadmin running on http://localhost:8888
 
 ## php-mysql-phpmyadmin
@@ -96,8 +88,7 @@ $ docker-compose up
 $ cd php-mysql-phpmyadmin
 $ docker-compose up
 ```
-> NOTE:\
-  app running on http://localhost:8080 \
+> app running on http://localhost:8080 \
   mysql running on mysql://localhost:3306 \
   phpmyadmin running on http://localhost:8888
 
@@ -107,6 +98,5 @@ $ docker-compose up
 $ cd elasticsearch-kibana-standalone
 $ docker-compose up
 ```
-> NOTE:\
-  elasticsearch running on http://localhost:9200 \
+> elasticsearch running on http://localhost:9200 \
   kibana running on mysql://localhost:5601 \
