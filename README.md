@@ -46,3 +46,13 @@ $ docker-compose up
 ```
 
 > NOTE: After run the commands, you can visit http://localhost:8000 in your browser.
+
+## httpd-ssl
+
+```bash
+$ cd 06-development
+$ docker build . -t my-httpd
+$ docker run --name my-httpd-server -p 80:80 -p 443:443 -d my-httpd
+```
+
+> NOTE: After starting the server, you can visit https://localhost in your browser
