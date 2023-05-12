@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .header {
+        padding-top: 8px;
+        width: 100%;
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .item {
+        border: 2px solid #000000;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .item-title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .item-body {
+        margin-top: 8px;
+        font-size: 16px;
+      }
+
+      .progress {
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h2>Posts</h2>
+        <small>Docker httpd server with SSL/HTTPS and HTTP support.</small>
+      </header>
+
+      <div class="progress">
+        <span>Loading...</span>
+      </div>
+
+      <div class="list"></div>
+    </main>
+    <script>
+      async function getData() {
+        const progress = document.querySelector(".progress");
+
+        try {
+          const data = await fetch("http://jsonplaceholder.typicode.com/posts?_limit=5").then(
+            (response) => response.json()
+          );
+
+          if (progress) progress.setAttribute("hidden", "hidden");
+
+          const list = document.querySelector(".list");
+
+          for (const o of data) {
+            const item = document.createElement("div");
+            item.classList.add("item");
+
+            const itemTitle = document.createElement("div");
+            itemTitle.classList.add("item-title");
+            itemTitle.appendChild(document.createTextNode(o.title));
+
+            const itemBody = document.createElement("div");
+            itemBody.classList.add("item-body");
+            itemBody.appendChild(document.createTextNode(o.body));
+
+            item.appendChild(itemTitle);
+            item.appendChild(itemBody);
+
+            list.appendChild(item);
+          }
+        } catch (error) {
+          console.error(error);
+          progress.querySelector("span").textContent = `Error loading. Check console for details.`;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", getData);
+    </script>
+  </body>
+</html>
