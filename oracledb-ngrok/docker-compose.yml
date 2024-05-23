@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  oracledb:
+    image: doctorkirk/oracle-19c
+    ports:
+      - 1521:1521
+    environment:
+      - ORACLE_SID=ORA
+      - ORACLE_PWD=password
+    # volumes:
+    #   - /path/to/oradata:/opt/oracle/oradata
+    networks:
+      - net
+  ngrok:
+    image: ngrok/ngrok:latest
+    restart: unless-stopped
+    environment:
+      - NGROK_AUTHTOKEN=<YOU_NGROK_AUTHTOKEN>
+    command: 'tcp oracledb:1521'
+    ports:
+      - "4040:4040"
+    tty: true
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
