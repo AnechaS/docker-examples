@@ -100,3 +100,12 @@ $ docker-compose up
 ```
 > elasticsearch running on http://localhost:9200 \
   kibana running on mysql://localhost:5601 \
+
+## elasticsearch-kibana-standalone
+
+```bash
+$ cd ubuntu-jenkins
+$ docker build -t ubuntu-jenkins .
+$ docker run --name jenkins-demo -p 8080 ubuntu-jenkins
+```
+> jenkins running on http://localhost:8080
