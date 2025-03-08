@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"  # Jaeger UI
+      - "4317:4317"    # gRPC endpoint
+      - "14250:14250"  # OTLP HTTP endpoint
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+  
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sample
+    ports:
+      - "3306:3306"
+
+  node-app:
+    build: ./app
+    ports:
+      - "3000:3000"
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4317
+    depends_on:
+      - jaeger
