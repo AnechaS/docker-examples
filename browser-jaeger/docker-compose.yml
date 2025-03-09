@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"  # Jaeger UI
+      - "4317:4317"  # OTLP gRPC
+      - "4318:4318"  # OTLP HTTP
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+      - QUERY_SERVICE=http://localhost:16686
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=5775
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf  # Custom Nginx config
+    depends_on:
+      - jaeger
+  
+  web:
+    build: ./web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - jaeger
+      - nginx
